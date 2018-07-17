@@ -1,0 +1,11 @@
+{
+    "emailServer":{
+          "host": "smtp.gmail.com",
+          "port": 587,
+          "host_user":"enter-your-email-address-here",
+          "host_password":"enter-your-password-here",
+          "address1": "recipient-address-1",
+          "address2": "recipient-address-2",
+          "address3": "recipient-address-3"
+    }
+}
