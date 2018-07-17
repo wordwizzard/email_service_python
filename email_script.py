@@ -94,7 +94,7 @@ class FileManager:
                 attachment.add_header('Content-Disposition', 'attachment', filename=f)
                 msg.attach(attachment)
 
-            server.sendmail("no-reply@sparkatm.co.za", to_address, msg.as_string())
+            server.sendmail(self.host_usr, to_address, msg.as_string())
         except smtplib.SMTPRecipientsRefused as refused:
             print("Invalid address - {to_address}".format(to_address=self.adr1 + ',' + self.adr2 + ',' + self.adr3))
         finally:
