@@ -29,10 +29,6 @@ class FileManager:
     def loadconfig(self):
 
         self.current_date = datetime.now().date()
-        # TODO:
-
-        # Change directory to where the config.json file is located.
-        os.chdir(self.filePathSrc)
 
         # Open the config.json file and save the relevant variables
         with open('config.json') as json_data_file:
@@ -61,7 +57,6 @@ class FileManager:
         self.filePathStorage = os.path.abspath(paths["storage"])
 
     def email_files(self):
-        # We should be in the directory where the file we want to attach are located.
         if os.getcwd() != self.filePathStorage:
             os.chdir(self.filePathStorage)
 
@@ -98,7 +93,7 @@ class FileManager:
                 msg.attach(attachment)
 
             server.sendmail(self.host_usr, to_address, msg.as_string())
-        except smtplib.SMTPRecipientsRefused as refused:
+        except smtplib.SMTPRecipientsRefused as e:
             print("Invalid address - {to_address}".format(to_address=self.adr1 + ',' + self.adr2 + ',' + self.adr3))
         finally:
             print('Done')
