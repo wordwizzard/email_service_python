@@ -27,3 +27,6 @@ Various predetermined file paths are required for the script to actually work.
 # Dependancies:
 Python 3.6
 
+# Logging:
+There isnt any logging in this project. It may be a good idea to add it to the project somewhere in the future.
+
